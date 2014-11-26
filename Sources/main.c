@@ -111,8 +111,8 @@ void APP_Run(void) {
 		yAxis |= 0xc000;
 	}
 	
-	xValue = xAxis / 50;
-	yValue = yAxis / 50;
+	xValue = xAxis / 100;
+	yValue = yAxis / 100;
 	
 	Term1_CRLF();
 	Term1_SetColor(clWhite, clBlack);
@@ -124,7 +124,7 @@ void APP_Run(void) {
 	Term1_SetColor(clGreen, clBlack);
 	Term1_SendNum(yValue);
 	Term1_SendStr("\r");
-	delay_time(5000);	
+	delay_time(500);	
     cnt++;
     
     if (HIDM1_App_Task()==ERR_BUSOFF) {
@@ -137,10 +137,13 @@ void APP_Run(void) {
         red_off();
         green_on();
       }
-      if (SW1_GetVal()!= 0) { /* button pressed */
-        delay_time(10000); /* wait for debouncing */
-        if (SW1_GetVal()!= 0)
-          (void)HIDM1_Move(xValue, yValue); /* move cursor with x-offset and y-offset */
+      if (SW1_GetVal()== 0) { /* button not pressed */
+        delay_time(1000); /* wait for debouncing */
+        if (SW1_GetVal()== 0)
+        	(void)HIDM1_Move(xValue, yValue); /* move cursor with x-offset and y-offset */
+      }
+      else {
+    	  HIDM1_Send(HIDM1_MOUSE_LEFT, yValue, xValue); /* send left click signal (inverted x and y-offset */
       }
     }
   }
