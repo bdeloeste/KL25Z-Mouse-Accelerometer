@@ -25,7 +25,7 @@ Generated_Code/usb_dci_kinetis.o: ../Generated_Code/usb_dci_kinetis.c \
  C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/limits_api.h \
  ../Generated_Code/PE_Error.h ../Generated_Code/PE_Const.h \
  ../Generated_Code/IO_Map.h \
- C:/Freescale/CW\ MCU\ v10.6/MCU/ProcessorExpert/lib/Kinetis/iofiles/MKL25Z4.h \
+ C:/Users/Bryan/workspace/microProject/Static_Code/IO_Map/MKL25Z4.h \
  ../Generated_Code/usb_user_config.h \
  ../Generated_Code/FSL_USB_Stack_Config.h \
  ../Generated_Code/usb_dci_kinetis.h ../Generated_Code/usb_bdt_kinetis.h \
@@ -91,7 +91,7 @@ C:/Freescale/CW\ MCU\ v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include/limits_api.h:
 
 ../Generated_Code/IO_Map.h:
 
-C:/Freescale/CW\ MCU\ v10.6/MCU/ProcessorExpert/lib/Kinetis/iofiles/MKL25Z4.h:
+C:/Users/Bryan/workspace/microProject/Static_Code/IO_Map/MKL25Z4.h:
 
 ../Generated_Code/usb_user_config.h:
 

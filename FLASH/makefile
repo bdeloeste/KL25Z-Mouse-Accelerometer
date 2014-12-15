@@ -2,7 +2,7 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-#Progress monitor hint: 28
+#Progress monitor hint: 57
 first : all
 -include ../makefile.init
 
@@ -15,6 +15,7 @@ RM := "$(GNU_Make_Install_DirEnv)/rm" -rf
 -include sources.mk
 -include subdir.mk
 -include Sources/subdir.mk
+-include Sources/TSS/subdir.mk
 -include Project_Settings/Startup_Code/subdir.mk
 -include Generated_Code/subdir.mk
 -include objects.mk
@@ -44,30 +45,30 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-Mouse.elf \
+microProject.elf \
 
 EXECUTABLES_QUOTED += \
-"Mouse.elf" \
+"microProject.elf" \
 
 EXECUTABLES_OS_FORMAT += \
-Mouse.elf \
+microProject.elf \
 
 
 # All Target
-all: warning-messages explicit-dependencies Mouse.elf secondary-outputs
+all: warning-messages explicit-dependencies microProject.elf secondary-outputs
 
 # Tool invocations
-Mouse.elf: $(OBJS) $(USER_OBJS) ../Project_Settings/Linker_Files/ProcessorExpert.ld
+microProject.elf: $(OBJS) $(USER_OBJS) ../Project_Settings/Linker_Files/ProcessorExpert.ld
 	@echo 'Building target: $@'
-	@echo 'Executing target #29 $@'
+	@echo 'Executing target #58 $@'
 	@echo 'Invoking: ARM Ltd Windows GCC C Linker'
-	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc"  $(USER_OBJS_QUOTED) $(LIBS_QUOTED) @"Mouse.args" -o"Mouse.elf"
+	"$(ARMSourceryDirEnv)/arm-none-eabi-gcc"  $(USER_OBJS_QUOTED)  @"microProject.args" -o"microProject.elf"
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(S_DEPS_QUOTED) "./*/*.o" "./*/*/*.o"  $(S_UPPER_DEPS_QUOTED) $(ASM_DEPS_QUOTED) $(ASM_UPPER_DEPS_QUOTED) $(SX_DEPS_QUOTED) $(EXECUTABLES_QUOTED) "./*/*.d" "./*/*/*.d"  $(ProjDirPath)/FLASH/Mouse.elf
+	-$(RM) $(S_DEPS_QUOTED) "./*/*.o" "./*/*/*.o"  $(S_UPPER_DEPS_QUOTED) $(ASM_DEPS_QUOTED) $(ASM_UPPER_DEPS_QUOTED) $(SX_DEPS_QUOTED) $(EXECUTABLES_QUOTED) "./*/*.d" "./*/*/*.d"  $(ProjDirPath)/FLASH/microProject.elf
 	-@echo ' '
 
 secondary-outputs:

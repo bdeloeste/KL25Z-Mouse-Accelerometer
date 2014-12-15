@@ -43,6 +43,29 @@
 #include "Term1.h"
 #include "Inhr2.h"
 #include "ASerialLdd1.h"
+#include "TSS1.h"
+#include "LCD1.h"
+#include "EN1.h"
+#include "BitIoLdd2.h"
+#include "RS1.h"
+#include "BitIoLdd3.h"
+#include "DB01.h"
+#include "BitIoLdd4.h"
+#include "DB11.h"
+#include "BitIoLdd5.h"
+#include "DB21.h"
+#include "BitIoLdd6.h"
+#include "DB31.h"
+#include "BitIoLdd7.h"
+#include "DB41.h"
+#include "BitIoLdd8.h"
+#include "DB51.h"
+#include "BitIoLdd9.h"
+#include "DB61.h"
+#include "BitIoLdd10.h"
+#include "DB71.h"
+#include "BitIoLdd11.h"
+#include "WAIT1.h"
 #include "SW1.h"
 #include "derivative.h"
 #include "PE_Types.h"
@@ -88,6 +111,14 @@ void APP_Run(void) {
   
   init_leds();
   for(;;) {
+//	  uint8_t lcd_count;
+//	  uint8_t buf[5];
+//	  
+//	  LCD1_GotoXY(2,1);
+//	  LCD1_WriteString((char*)buf);
+//	  lcd_count++;
+//	  WAIT1_Waitms(100);
+	  TSS_Task();
 	do
 	{
 		I2C_SelectSlave(0x1d);
@@ -111,8 +142,8 @@ void APP_Run(void) {
 		yAxis |= 0xc000;
 	}
 	
-	xValue = xAxis / 100;
-	yValue = yAxis / 100;
+	xValue = xAxis / (100 - TSS1_cKey0.Position);
+	yValue = yAxis / (100 - TSS1_cKey0.Position);
 	
 	Term1_CRLF();
 	Term1_SetColor(clWhite, clBlack);
@@ -123,6 +154,10 @@ void APP_Run(void) {
 	Term1_SendStr("   Y-value: ");
 	Term1_SetColor(clGreen, clBlack);
 	Term1_SendNum(yValue);
+	Term1_SetColor(clWhite, clBlack);
+	Term1_SendStr("   TSS-value: ");
+	Term1_SetColor(clGreen, clBlack);
+	Term1_SendNum(TSS1_cKey0.Position);
 	Term1_SendStr("\r");
 	delay_time(500);	
     cnt++;
@@ -202,10 +237,11 @@ void delay_time(int number){
 /*lint -save  -e970 Disable MISRA rule (6.3) checking. */
 int main(void)
 {
-
   /*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
   PE_low_level_init();
+
   /*** End of Processor Expert internal initialization.                    ***/
+  Configure();
   APP_Run();
 
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/

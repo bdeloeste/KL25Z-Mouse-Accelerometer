@@ -4,14 +4,15 @@
 -g3
 -gdwarf-2
 -gstrict-dwarf
--I"C:/Users/Bryan/workspace/Mouse/Project_Headers"
--I"C:/Users/Bryan/workspace/Mouse/Project_Settings/Startup_Code"
+-I"C:/Users/Bryan/workspace/microProject/Project_Headers"
+-I"C:/Users/Bryan/workspace/microProject/Project_Settings/Startup_Code"
 -I"C:/Freescale/CW MCU v10.6/MCU/ARM_GCC_Support/ewl/EWL_C/include"
 -I"C:/Freescale/CW MCU v10.6/MCU/ARM_GCC_Support/ewl/EWL_Runtime/include"
--I"C:/Users/Bryan/workspace/Mouse/Generated_Code"
--I"C:/Users/Bryan/workspace/Mouse/Sources"
--I"C:/Freescale/CW MCU v10.6/MCU/ProcessorExpert/lib/Kinetis/pdd/inc"
--I"C:/Freescale/CW MCU v10.6/MCU/ProcessorExpert/lib/Kinetis/iofiles"
+-I"C:/Users/Bryan/workspace/microProject/Generated_Code"
+-I"C:/Users/Bryan/workspace/microProject/Sources"
+-I"C:/Users/Bryan/workspace/microProject/Static_Code/PDD"
+-I"C:/Users/Bryan/workspace/microProject/Static_Code/IO_Map"
+-I"C:/Users/Bryan/workspace/microProject/Sources/TSS"
 -O0
 -ffunction-sections
 -fdata-sections
